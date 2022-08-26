@@ -66,12 +66,14 @@ int main(void)
   SystemClock_Config();
 
   /* Initialize BSP Led for LED2 */
-  BSP_LED_Init(LED2);
+  //BSP_LED_Init(LED2);
+  //BSP_LED_Init(GPIO_PIN_5);
 
   /* Infinite loop */
   while (1)
   {
-	  BSP_LED_Toggle(LED2);
+	  //BSP_LED_Toggle(LED2);
+	  //BSP_LED_Toggle(GPIO_PIN_5);
 	  HAL_Delay(100);
   }
 }
