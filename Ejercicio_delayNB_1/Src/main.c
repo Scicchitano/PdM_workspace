@@ -125,6 +125,32 @@ int main(void)
  * @param  None
  * @retval None
  */
+
+void delayInit( delay_t * delay, tick_t duration ){
+	delay->duration = duration;
+}
+
+bool_t delayRead( delay_t * delay ){
+
+	if (!delay->running){
+		delay->startTime=HAL_GetTick();
+		delay->running=1;
+	}else{
+		if(HAL_GetTick()-delay->startTime >= delay->duration){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	return 0;
+}
+
+
+void delayWrite( delay_t * delay, tick_t duration ){
+	delay->duration = duration;
+}
+
+
 static void SystemClock_Config(void)
 {
 	RCC_ClkInitTypeDef RCC_ClkInitStruct;
