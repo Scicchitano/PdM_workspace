@@ -37,3 +37,11 @@ Implementar un programa que utilice retardos no bloqueantes y  haga titilar en f
 - LED3: 1000 ms.
 
 
+## Practica 3
+### Ejercicio 1 (PdM_P3_Ej1)
+Crear un nuevo proyecto como copia del proyecto realizado para la práctica 2.
+Crear una carpeta API dentro de la carpeta Drivers en la estructura de directorios del nuevo proyecto. Crear dentro de la carpeta API, subcapetas /src y /inc.
+
+### Ejercicio 2 (PdM_P3_Ej2)
+Implementar un programa que utilice retardos no bloqueantes y haga titilar en forma periódica e independiente los tres leds de la placa NUCLEO-F429ZI de acuerdo a una secuencia predeterminada como en la práctica 1.
+Cada led debe permanecer encendido 200 ms.  No debe encenderse más de un led simultáneamente en ningún momento.

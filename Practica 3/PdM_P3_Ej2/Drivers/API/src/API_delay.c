@@ -34,7 +34,7 @@ bool_t delayReadState( delay_t * delay ){
 			delay->running=1;
 		}else{
 			if(HAL_GetTick()-delay->startTime >= delay->duration){
-				delay->startTime = HAL_GetTick();
+				//delay->startTime = HAL_GetTick();
 				delay->running=0;
 				return true;
 			}else{
