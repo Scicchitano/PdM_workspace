@@ -16,6 +16,7 @@ RM := rm -rf
 -include Drivers/Core/Src/subdir.mk
 -include Drivers/CMSIS/subdir.mk
 -include Drivers/BSP/STM32F4xx_Nucleo_144/subdir.mk
+-include Drivers/API/src/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -64,8 +65,8 @@ all: main-build
 main-build: SE_P2_Ej2_FR429ZI.elf secondary-outputs
 
 # Tool invocations
-SE_P2_Ej2_FR429ZI.elf SE_P2_Ej2_FR429ZI.map: $(OBJS) $(USER_OBJS) C:\Users\diego\Documents\Especializacion\ Sistemas\ Embebidos\Primer\ Bimestre\Programacion\ de\ Microprocesadores\PdM_workspace\SE_P2_Ej2_FR429ZI\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "SE_P2_Ej2_FR429ZI.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\SE_P2_Ej2_FR429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SE_P2_Ej2_FR429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SE_P2_Ej2_FR429ZI.elf SE_P2_Ej2_FR429ZI.map: $(OBJS) $(USER_OBJS) C:\Users\diego\Documents\Especializacion\ Sistemas\ Embebidos\Primer\ Bimestre\Programacion\ de\ Microprocesadores\PdM_workspace\Practica\ 2\SE_P2_Ej2_FR429ZI\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "SE_P2_Ej2_FR429ZI.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\Practica 2\SE_P2_Ej2_FR429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SE_P2_Ej2_FR429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
