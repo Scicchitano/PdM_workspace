@@ -45,3 +45,28 @@ Crear una carpeta API dentro de la carpeta Drivers en la estructura de directori
 ### Ejercicio 2 (PdM_P3_Ej2)
 Implementar un programa que utilice retardos no bloqueantes y haga titilar en forma periódica e independiente los tres leds de la placa NUCLEO-F429ZI de acuerdo a una secuencia predeterminada como en la práctica 1.
 Cada led debe permanecer encendido 200 ms.  No debe encenderse más de un led simultáneamente en ningún momento.
+
+
+## Practica 4
+### Ejercicio 1 (PdM_P4_Ej1)
+Implementar una MEF anti-rebote que permita leer el estado del pulsador de la placa NUCLEO-F429ZI y generar acciones o eventos ante un flanco descendente o ascendente, de acuerdo al siguiente diagrama:
+
+### Ejercicio 2 (PdM_P4_Ej2)
+Crear un nuevo proyecto como copia del proyecto con la implementación del punto 1 de la práctica 4.
+
+Implementar un módulo de software en un archivos fuente API_debounce.c con su correspondiente archivo de cabecera API_debounce.h y ubicarlos en el proyecto dentro de  las carpetas /drivers/API/src y /drivers/API/inc, respectivamente.
+En API_debounce.h se deben ubicar los prototipos de las funciones públicas y las declaraciones:
+void debounceFSM_init();
+void debounceFSM_update();
+
+/* La función readKey debe leer una variable interna del módulo y devolver true o false si la tecla fue presionada.  Si devuelve true, debe resetear (poner en false) el estado de la variable.*/
+bool_t readKey();
+
+En API_debounce.c se deben ubicar las declaraciones privadas, los prototipos de las funciones privadas y la implementación de todas las funciones del módulo, privadas y públicas:
+
+La declaración de debounceState_t debe ser privada en el archivo .c y la variable de estado de tipo debounceState_t debe ser global privada (con static).
+
+Declarar una variable tipo bool_t global privada que se ponga en true cuando ocurre un flanco descendente y se ponga en false cuando se llame a la función readKey();
+
+Implementar un programa que cambie la frecuencia de toggleo del LED2 entre 100 ms y 500 ms cada vez que se presione la tecla.  El programa debe usar las funciones anti-rebote del módulo API_debounce y los retardos no bloqueantes del módulo API_delay.
+

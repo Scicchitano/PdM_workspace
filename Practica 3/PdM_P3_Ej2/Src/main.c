@@ -32,7 +32,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define Delay_LED 200
+#define Delay_Alarma 200
 
 #define ARRAYLENGTH(x) (sizeof x/sizeof x[0])
 /* Private macro -------------------------------------------------------------*/
@@ -72,7 +72,7 @@ int main(void)
 
 	/* Initialize BSP Led for LED */
 	delay_t TimerLED;
-	delayInit(&TimerLED, Delay_LED);
+	delayInit(&TimerLED, Delay_Alarma);
 	
 	
 	/* Inicializo todos los LEDS en OFF*/
@@ -91,15 +91,7 @@ int main(void)
 	/* Infinite loop */
 	while (1)
 	{
-		if (delayReadState(&TimerLED)) {
-			BSP_LED_Off(Secuencia[sec_pos]);
-			sec_pos++;
-			if(sec_pos>=ARRAYLENGTH(Secuencia)){
-				sec_pos=0;
-			}
-			BSP_LED_On(Secuencia[sec_pos]);
-			delayInit(&TimerLED, Delay_LED);
-		}
+
 	}
 }
 

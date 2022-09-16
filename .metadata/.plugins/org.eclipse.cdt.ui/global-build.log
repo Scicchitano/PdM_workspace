@@ -1,25 +1,28 @@
-15:43:54 **** Incremental Build of configuration Debug for project PdM_P3_Ej2 ****
+19:13:13 **** Incremental Build of configuration Debug for project PdM_P4_Ej2 ****
 make -j4 all 
-arm-none-eabi-gcc "../Drivers/API/src/API_delay.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 3/PdM_P3_Ej2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 3/PdM_P3_Ej2/Drivers/CMSIS/Include" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 3/PdM_P3_Ej2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 3/PdM_P3_Ej2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 3/PdM_P3_Ej2/Drivers/Core/Inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 3/PdM_P3_Ej2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/src/API_delay.d" -MT"Drivers/API/src/API_delay.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_delay.o"
-../Drivers/API/src/API_delay.c: In function 'delayReadState':
-../Drivers/API/src/API_delay.c:33:21: warning: implicit declaration of function 'HAL_GetTick' [-Wimplicit-function-declaration]
-   33 |    delay->startTime=HAL_GetTick();
-      |                     ^~~~~~~~~~~
-arm-none-eabi-gcc -o "PdM_P3_Ej2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\Practica 3\PdM_P3_Ej2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PdM_P3_Ej2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PdM_P3_Ej2.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/CMSIS/Include" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/Core/Inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/API" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/API/API_delay/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 4/PdM_P4_Ej2/Drivers/API/API_debounce/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:38:19: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '500' to '244' [-Woverflow]
+   38 | #define Duration2 500
+      |                   ^~~
+../Src/main.c:92:14: note: in expansion of macro 'Duration2'
+   92 |     duration=Duration2;
+      |              ^~~~~~~~~
+arm-none-eabi-gcc -o "PdM_P4_Ej2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\Practica 4\PdM_P4_Ej2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PdM_P4_Ej2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PdM_P4_Ej2.elf
  
-arm-none-eabi-size   PdM_P3_Ej2.elf 
-arm-none-eabi-objdump -h -S  PdM_P3_Ej2.elf  > "PdM_P3_Ej2.list"
+arm-none-eabi-size   PdM_P4_Ej2.elf 
+arm-none-eabi-objdump -h -S  PdM_P4_Ej2.elf  > "PdM_P4_Ej2.list"
    text	   data	    bss	    dec	    hex	filename
-   6452	     32	   1568	   8052	   1f74	PdM_P3_Ej2.elf
+   7224	     36	   1588	   8848	   2290	PdM_P4_Ej2.elf
 Finished building: default.size.stdout
  
-Finished building: PdM_P3_Ej2.list
+Finished building: PdM_P4_Ej2.list
  
-15:44:05 **** Incremental Build of configuration Debug for project PdM_P3_Ej2 ****
+19:17:45 **** Incremental Build of configuration Debug for project PdM_P4_Ej2 ****
 make -j4 all 
-arm-none-eabi-size   PdM_P3_Ej2.elf 
+arm-none-eabi-size   PdM_P4_Ej2.elf 
    text	   data	    bss	    dec	    hex	filename
-   6452	     32	   1568	   8052	   1f74	PdM_P3_Ej2.elf
+   7224	     36	   1588	   8848	   2290	PdM_P4_Ej2.elf
 Finished building: default.size.stdout
  
