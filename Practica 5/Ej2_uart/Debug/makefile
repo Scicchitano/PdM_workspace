@@ -16,6 +16,7 @@ RM := rm -rf
 -include Drivers/Core/Src/subdir.mk
 -include Drivers/CMSIS/subdir.mk
 -include Drivers/BSP/STM32F4xx_Nucleo_144/subdir.mk
+-include Drivers/API/API_uart/src/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -64,8 +65,8 @@ all: main-build
 main-build: PdM_P5_Ej1.elf secondary-outputs
 
 # Tool invocations
-PdM_P5_Ej1.elf PdM_P5_Ej1.map: $(OBJS) $(USER_OBJS) C:\Users\diego\Documents\Especializacion\ Sistemas\ Embebidos\Primer\ Bimestre\Programacion\ de\ Microprocesadores\PdM_workspace\Practica\ 5\Ej2_uart\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "PdM_P5_Ej1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\Practica 5\Ej2_uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PdM_P5_Ej1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+PdM_P5_Ej1.elf PdM_P5_Ej1.map: $(OBJS) $(USER_OBJS) C:\Users\Diego\ Scicchitano\Documents\Diego\Repo\ PdM\PdM_workspace\Practica\ 5\Ej2_uart\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "PdM_P5_Ej1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Diego Scicchitano\Documents\Diego\Repo PdM\PdM_workspace\Practica 5\Ej2_uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PdM_P5_Ej1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
