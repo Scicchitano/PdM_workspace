@@ -49,6 +49,7 @@ void debounceFSM_init(void){
 	BSP_LED_Off(LED3);
 	delayInit(&bounce_delay, TIME_DEBOUNCE);
 	pending_pressed = false;
+	uartInit();
 }
 
 

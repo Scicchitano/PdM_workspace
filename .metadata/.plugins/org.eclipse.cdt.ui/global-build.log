@@ -145,3 +145,32 @@ Finished building: default.size.stdout
  
 Finished building: PdM_P5_Ej2.list
  
+19:18:30 **** Build of configuration Debug for project PdM_P5_Ej2 ****
+make -j4 all 
+arm-none-eabi-size   PdM_P5_Ej2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7864	     36	   1652	   9552	   2550	PdM_P5_Ej2.elf
+Finished building: default.size.stdout
+ 
+19:20:49 **** Incremental Build of configuration Debug for project PdM_P5_Ej2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/API/API_debounce/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/CMSIS/Include" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/Core/Inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/API" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/API/API_delay/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/API/API_debounce/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/Practica 5/PdM_P5_Ej2/Drivers/API/API_uart/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/API_debounce/src/API_debounce.d" -MT"Drivers/API/API_debounce/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/API_debounce/src/API_debounce.o"
+../Drivers/API/API_debounce/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/API_debounce/src/API_debounce.c:52:2: warning: implicit declaration of function 'uartInit' [-Wimplicit-function-declaration]
+   52 |  uartInit();
+      |  ^~~~~~~~
+../Drivers/API/API_debounce/src/API_debounce.c: In function 'buttonPressed':
+../Drivers/API/API_debounce/src/API_debounce.c:108:2: warning: implicit declaration of function 'uartSendString' [-Wimplicit-function-declaration]
+  108 |  uartSendString("Button Pressed");
+      |  ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "PdM_P5_Ej2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\Practica 5\PdM_P5_Ej2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PdM_P5_Ej2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PdM_P5_Ej2.elf
+ 
+arm-none-eabi-size   PdM_P5_Ej2.elf 
+arm-none-eabi-objdump -h -S  PdM_P5_Ej2.elf  > "PdM_P5_Ej2.list"
+   text	   data	    bss	    dec	    hex	filename
+   9648	     36	   1652	  11336	   2c48	PdM_P5_Ej2.elf
+Finished building: default.size.stdout
+ 
+Finished building: PdM_P5_Ej2.list
+ 
