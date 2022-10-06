@@ -8,6 +8,8 @@
 #ifndef BUZZER_INC_BUZZER_H_
 #define BUZZER_INC_BUZZER_H_
 
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
 void Buzzer_init(void); // Se inicializa la configuración del GPIO del buzzer
 void Buzzer_write(GPIO_PinState Estado); // Se cambia el estado del buzzer
 void Buzzer_toggle(void);

@@ -10,6 +10,7 @@
 
 #include "API_debounce.h"
 #include "SensorTemp.h"
+#include "Buzzer.h"
 #include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
 
 /**

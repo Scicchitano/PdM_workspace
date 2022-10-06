@@ -156,7 +156,7 @@ void Activar_Estado_Critico (delay_t * delay){
 		BSP_LED_Toggle(LED1);
 		BSP_LED_Toggle(LED2);
 		BSP_LED_Toggle(LED3);
-//		Buzzer_toggle();
+		Buzzer_toggle();
 	}
 
 }
@@ -164,23 +164,23 @@ void Activar_Estado_Alto(void){
 	BSP_LED_On(LED1);
 	BSP_LED_On(LED2);
 	BSP_LED_On(LED3);
-//	Buzzer_write(GPIO_PIN_RESET);
+	Buzzer_write(GPIO_PIN_RESET);
 }
 void Activar_Estado_Medio(void){
 	BSP_LED_On(LED1);
 	BSP_LED_On(LED2);
 	BSP_LED_Off(LED3);
-//	Buzzer_write(GPIO_PIN_RESET);
+	Buzzer_write(GPIO_PIN_RESET);
 }
 void Activar_Estado_Bajo(void){
 	BSP_LED_On(LED1);
 	BSP_LED_Off(LED2);
 	BSP_LED_Off(LED3);
-//	Buzzer_write(GPIO_PIN_RESET);
+	Buzzer_write(GPIO_PIN_RESET);
 }
 void Activar_Estado_Bajo_Cero(void){
 	BSP_LED_Off(LED1);
 	BSP_LED_Off(LED2);
 	BSP_LED_Off(LED3);
-//	Buzzer_write(GPIO_PIN_SET);
+	Buzzer_write(GPIO_PIN_SET);
 }

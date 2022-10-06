@@ -10,6 +10,10 @@
 #include <stdlib.h>
 #include "API_uart.h"
 
+#define MAX_TEMP 60
+#define MIN_TEMP -10
+#define MAX_VALUE_ADC 4095
+
 
 ADC_HandleTypeDef hadc1;
 
@@ -24,8 +28,9 @@ int8_t SensorTemp_Read(void){
 	HAL_ADC_Start(&hadc1);
 	// Poll ADC1 Perihperal & TimeOut = 1mSec
 	HAL_ADC_PollForConversion(&hadc1, 1);
+	float m =MAX_TEMP/MAX_VALUE_ADC;
 	// Read The ADC Conversion Result & Map It To PWM DutyCycle
-	AD_RES = HAL_ADC_GetValue(&hadc1);
+	AD_RES = (MAX_TEMP/MAX_VALUE_ADC)*HAL_ADC_GetValue(&hadc1) + MIN_TEMP;
 	uartSendString((uint8_t *) &AD_RES);
 	return AD_RES;
 }
