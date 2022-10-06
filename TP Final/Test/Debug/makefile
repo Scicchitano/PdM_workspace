@@ -66,8 +66,8 @@ all: main-build
 main-build: Test.elf secondary-outputs
 
 # Tool invocations
-Test.elf Test.map: $(OBJS) $(USER_OBJS) C:\Users\diego\Documents\Especializacion\ Sistemas\ Embebidos\Primer\ Bimestre\Programacion\ de\ Microprocesadores\PdM_workspace\TP_Final\Test\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\TP_Final\Test\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Test.elf Test.map: $(OBJS) $(USER_OBJS) C:\Users\diego\Documents\Especializacion\ Sistemas\ Embebidos\Primer\ Bimestre\Programacion\ de\ Microprocesadores\PdM_workspace\TP\ Final\Test\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\TP Final\Test\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
