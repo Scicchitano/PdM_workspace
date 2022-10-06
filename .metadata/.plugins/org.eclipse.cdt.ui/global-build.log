@@ -244,3 +244,22 @@ arm-none-eabi-size   Test.elf
   21736	    136	   3704	  25576	   63e8	Test.elf
 Finished building: default.size.stdout
  
+20:34:39 **** Incremental Build of configuration Debug for project Test ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/API/API_Control_Estados/src/API_Control_Estados.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/SensorTemp/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/Buzzer/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/API_uart/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/API_delay/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/API_debounce/inc" -I"C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/API_Control_Estados/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/API_Control_Estados/src/API_Control_Estados.d" -MT"Drivers/API/API_Control_Estados/src/API_Control_Estados.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/API_Control_Estados/src/API_Control_Estados.o"
+In file included from C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/API_Control_Estados/inc/API_Control_Estados.h:12,
+                 from ../Drivers/API/API_Control_Estados/src/API_Control_Estados.c:9:
+C:/Users/diego/Documents/Especializacion Sistemas Embebidos/Primer Bimestre/Programacion de Microprocesadores/PdM_workspace/TP Final/Test/Drivers/API/SensorTemp/inc/SensorTemp.h:41:13: warning: 'MX_ADC1_Init' declared 'static' but never defined [-Wunused-function]
+   41 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Test.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\diego\Documents\Especializacion Sistemas Embebidos\Primer Bimestre\Programacion de Microprocesadores\PdM_workspace\TP Final\Test\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test.elf
+ 
+arm-none-eabi-size   Test.elf 
+arm-none-eabi-objdump -h -S  Test.elf  > "Test.list"
+   text	   data	    bss	    dec	    hex	filename
+  21736	    136	   3704	  25576	   63e8	Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test.list
+ 

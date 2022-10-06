@@ -2859,7 +2859,7 @@ Infinite_Loop:
 	...
 
 0800166c <ControlFSM_init>:
-int16_t Temp = 0;
+static int16_t Temp = 0;
 
 bool flagButton = false;
 

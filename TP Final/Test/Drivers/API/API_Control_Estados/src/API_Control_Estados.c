@@ -12,7 +12,7 @@
 #define Delay_Alarma 200
 #define Muestreo_Temp 3000
 
-// Typedef enum?
+
 #define Min_Temp_Critica 40
 #define Min_Temp_Alta 30
 #define Min_Temp_Media 15
@@ -36,12 +36,12 @@ typedef enum {
 // P4_2 - Variable de estado (global)
 static debounceState_t curr_state;
 
-delay_t Timer_Temp;
-delay_t Timer_Alarma;
+static delay_t Timer_Temp;
+static delay_t Timer_Alarma;
 
 
-uint8_t Estado = 0;
-int16_t Temp = 0;
+static uint8_t Estado = 0;
+static int16_t Temp = 0;
 
 bool flagButton = false;
 
