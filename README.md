@@ -70,3 +70,38 @@ Declarar una variable tipo bool_t global privada que se ponga en true cuando ocu
 
 Implementar un programa que cambie la frecuencia de toggleo del LED2 entre 100 ms y 500 ms cada vez que se presione la tecla.  El programa debe usar las funciones anti-rebote del módulo API_debounce y los retardos no bloqueantes del módulo API_delay.
 
+
+## Practica 5
+### Ejercicio 1 (PdM_P5_Ej1)
+Implementar un módulo de software en un archivos fuente API_uart.c con su correspondiente archivo de cabecera API_uart.h y ubicarlos en el proyecto dentro de  las carpetas /drivers/API/src y /drivers/API/inc, respectivamente.
+En API_uart.h se deben ubicar los prototipos de las funciones públicas.
+bool_t uartInit();
+void uartSendString(uint8_t * pstring);
+void uartSendStringSize(uint8_t * pstring, uint16_t size);
+void uartReceiveStringSize(uint8_t * pstring, uint16_t size);
+
+En API_uart.c se deben ubicar los prototipos de las funciones privadas y la implementación de todas las funciones de módulo, privadas y públicas.
+
+
+### Ejercicio 2 (PdM_P5_Ej2)
+Sobre el ejercicio de la práctica 4, implementar un programa que utilice el módulo de uart para informar al usuario cuando se producen los flancos ascendente y descendente.
+
+
+
+## TP Final
+
+El objetivo de este proyecto es una implementación de un sistema de alarma y monitoreo. El mismo tendrá distintos modos de funcionamiento dependiendo de la temperatura indicando el rango de temperatura en el que se encuentra el sistema:
+
+### Modo bajo cero (T < 0°C):
+Se apagarán todos los leds y se encenderá el buzzer indicando que la temperatura es demasiado baja.
+### Modo temperatura baja (0°C < T < 7°C):
+Se encenderá solo un led.
+### Modo temperatura media (7°C < T < 15°C):
+Se encenderán dos leds.
+### Modo temperatura alta (15°C < T < 30°C):
+Se encenderán tres leds.
+### Modo temperatura critica (30°C < T):
+Se cambiará el estado de los leds y del buzzer de manera intermitente indicando que el sistema se encuentra en un estado critico
+ 
+Además, se podrá disparar la alarma de manera manual con el pulsador.
+La temperatura será leida a través del ADC.
