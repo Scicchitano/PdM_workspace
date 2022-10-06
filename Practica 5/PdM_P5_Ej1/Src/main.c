@@ -80,13 +80,18 @@ int main(void)
 
   /* Output a message on Hyperterminal using printf function */
   uartInit();
+  //char msg[12];
+  uint8_t msg[2] = {'a','b'};
+  uint8_t Temp = 0;
 
   /* Infinite loop */
   while (1)
   {
-	  BSP_LED_Toggle(LED3);
-	  uartSendString("Hola Diego");
-	  HAL_Delay(1000);
+//	  BSP_LED_Toggle(LED3);
+	  uartReceiveStringSize((uint8_t *) msg, 12);
+//	  Temp = (uint8_t) msg[0];
+//	  uartSendString((uint8_t *) msg);
+	  //HAL_Delay(1000);
   }
 }
 

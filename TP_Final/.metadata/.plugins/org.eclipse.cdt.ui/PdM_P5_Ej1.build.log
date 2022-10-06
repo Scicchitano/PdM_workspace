@@ -1,0 +1,10 @@
+11:55:44 **** Build of configuration Debug for project PdM_P5_Ej1 ****
+make -j4 all 
+arm-none-eabi-size   PdM_P5_Ej1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8512	     32	   1640	  10184	   27c8	PdM_P5_Ej1.elf
+Finished building: default.size.stdout
+ 
+
+11:55:45 Build Finished. 0 errors, 0 warnings. (took 1s.556ms)
+
